@@ -38,7 +38,7 @@
                             <td>{{ $item->status == '1' ? 'Hidden':'Shown' }}</td>
                             <td>
                                 <a href="{{ url('admin/edit-category/'.$item->id) }}" class="btn btn-success">Edit</a>
-                                <a href="{{ url('admin/delete-category/'.$item->id) }}" class="btn btn-danger">Delete</a>
+                                <a href="{{ url('admin/delete-category/'.$item->id) }}" onclick="return confirm('Are you sure you want to delete this item?');" class="btn btn-danger">Delete</a>
                             </td>
                         </tr>
                     @endforeach
