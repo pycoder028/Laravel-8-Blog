@@ -26,6 +26,7 @@
                         <th>Category</th>
                         <th>Post Name</th>
                         <th>Status</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -35,6 +36,10 @@
                             <td>{{ $item->category->name }}</td>
                             <td>{{ $item->name }}</td>
                             <td>{{ $item->status == '1' ? 'Hidden':'Visible' }}</td>
+                            <td>
+                                <a href="{{ url('admin/post/'.$item->id) }}" class="btn btn-sm btn-success"><i class="fa-solid fa-pen-to-square"></i></a>
+                                <a href="{{ url('admin/delete-post/'.$item->id) }}" onclick="return confirm('Are you sure you want to delete this item?');" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></a>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
