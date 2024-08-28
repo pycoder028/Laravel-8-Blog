@@ -24,7 +24,7 @@
                         <th>Username</th>
                         <th>Email</th>
                         <th>Role</th>
-                        <th>Edit</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -36,7 +36,6 @@
                             <td>{{ $item->role_as == '1' ? 'Admin':'User' }}</td>
                             <td>
                                 <a href="{{ url('admin/user/'.$item->id) }}" class="btn btn-sm btn-success"><i class="fa-solid fa-pen-to-square"></i></a>
-                                <a href="{{ url('admin/delete-post/'.$item->id) }}" onclick="return confirm('Are you sure you want to delete this item?');" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></a>
                             </td>
                         </tr>
                     @endforeach
