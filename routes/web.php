@@ -7,6 +7,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/',[\App\Http\Controllers\Frontend\FrontendController::class,'index']);
+Route::get('tutorial/{category_slug}',[\App\Http\Controllers\Frontend\FrontendController::class,'viewCategoryPost']);
 
 /* Admin routes group */
 Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
