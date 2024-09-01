@@ -24,4 +24,8 @@ class Category extends Model
         'created_by',
     ];
 
+    public function posts(){
+        return $this->hasMany(Post::class, 'category_id', 'id');
+    }
+
 }
