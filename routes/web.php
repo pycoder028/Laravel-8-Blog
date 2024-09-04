@@ -10,6 +10,9 @@ Route::get('/',[\App\Http\Controllers\Frontend\FrontendController::class,'index'
 Route::get('tutorial/{category_slug}',[\App\Http\Controllers\Frontend\FrontendController::class,'viewCategoryPost']);
 Route::get('/tutorial/{category_slug}/{post_slug}',[\App\Http\Controllers\Frontend\FrontendController::class,'viewPost']);
 
+/* Comment System */
+Route::post('comments',[\App\Http\Controllers\Frontend\CommentController::class, 'store']);
+
 /* Admin routes group */
 Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
 

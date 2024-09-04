@@ -23,6 +23,52 @@
                         <span class="text-justify">{!! $post->description !!}</span>
                     </div>
                 </div>
+
+                <div class="comment-area mt-4">
+
+                    @if(session('message'))
+                        <h6 class="alert alert-warning mb-3">{{ session('message') }}</h6>
+                    @endif
+
+                    <div class="card card-body">
+                        <h6 class="card-title">Leave a comment</h6>
+                        <form action="{{ url('comments') }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="post_slug" value="{{ $post->slug }}">
+                            <textarea name="comment_body" class="form-control"  rows="3" required></textarea>
+                            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+                        </form>
+                    </div>
+
+                    @forelse ($post->comment as $item)
+
+                    <div class="card card-body shadow-sm mt-3">
+                        <div class="detail-area">
+                            <h6 class="user-name mb-1">
+                                @if($item->user)
+                                    {{ $item->user->name }}
+                                @endif
+                                <small class="ms-3 text-primary">Commented on: {{ $item->created_at->format('d-m-Y') }}</small>
+                            </h6>
+                            <p class="user-comment mb-1">
+                                {{ $item->comment_body }}
+                            </p>
+                        </div>
+                        @if(Auth::check() && Auth::id() == $item->user_id )
+                        <div>
+                            <a href="" class="btn btn-sm btn-primary me-2">Edit</a>
+                            <a href="" class="btn btn-sm btn-danger me-2">Delete</a>
+                        </div>
+                        @endif
+                    </div>
+                    @empty
+                    <div class="card card-body shadow-sm mt-3">
+                        <h6>No Comments Yet.</h6>
+                    </div>
+                    @endforelse
+                </div>
+
+
             </div>
             <div class="col-md-3">
                 <div class="border p-2 my-2">
