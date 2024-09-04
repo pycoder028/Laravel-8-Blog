@@ -42,7 +42,7 @@
 
                     @forelse ($post->comment as $item)
 
-                    <div class="card card-body shadow-sm mt-3">
+                    <div class="comment-container card card-body shadow-sm mt-3">
                         <div class="detail-area">
                             <h6 class="user-name mb-1">
                                 @if($item->user)
@@ -56,8 +56,7 @@
                         </div>
                         @if(Auth::check() && Auth::id() == $item->user_id )
                         <div>
-                            <a href="" class="btn btn-sm btn-primary me-2">Edit</a>
-                            <a href="" class="btn btn-sm btn-danger me-2">Delete</a>
+                            <button type="button" value="{{ $item->id }}" href="" class="deleteComment btn btn-sm btn-danger me-2">Delete</button>
                         </div>
                         @endif
                     </div>
@@ -100,4 +99,43 @@
     </div>
 </div>
 
+@endsection
+
+
+@section('scripts')
+    <script>
+        $(document).ready(function (){
+
+            $(document).ready(function (){
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+            });
+
+            $(document).on('click','.deleteComment', function(){
+                if(confirm('Are you sure you want to delete this comment?')){
+                    var thisClicked = $(this);
+                    var comment_id = thisClicked.val();
+
+                    $.ajax({
+                        type: "POST",
+                        url: "/delete-comment",
+                        data:{
+                            'comment_id': comment_id
+                        },
+                        success: function (res){
+                            if(res.status == 200){
+                                thisClicked.closest('.comment-container').remove();
+                                alert(res.message);
+                            }else{
+                                alert(res.message);
+                            }
+                        }
+                    });
+                }
+            });
+        });
+    </script>
 @endsection
