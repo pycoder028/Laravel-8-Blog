@@ -2,7 +2,12 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3 d-none d-sm-none d-md-inline ">
-                <img src="{{ asset('assets/images/logo.png') }}" style="width: 140px" alt="logo">
+              @php
+                $setting = App\Models\Setting::find(1);
+              @endphp
+                @if($setting)
+                <img src="{{ asset('uploads/settings/'.$setting->logo) }}" style="width: 100px" alt="logo">
+                @endif
             </div>
             <div class="col-md-9 my-auto">
                 <div class="border text-center p-2">
@@ -46,7 +51,7 @@
               @endforeach
               @if(Auth::check())
               <li>
-                <a class="btn-danger nav-link " href="{{ route('logout') }}" 
+                <a class="btn-danger nav-link" href="{{ route('logout') }}" 
                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                   @csrf

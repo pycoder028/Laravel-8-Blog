@@ -1,11 +1,10 @@
 @extends('layouts.app')
 
+@section('title', "$setting->meta_title")
+@section('meta_description', "$setting->meta_description")
+@section('meta_keyword', "$setting->meta_keyword")
+
 @section('content')
-
-@section('title', "Neurospecial Blogging Website")
-@section('meta_description', "Neurospecial Blogging Website")
-@section('meta_keyword', "Neurospecial Blogging Website")
-
 
 <div class="bg-danger py-5">
     <div class="container">
