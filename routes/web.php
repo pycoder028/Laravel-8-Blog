@@ -41,5 +41,9 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
     Route::get('/settings', [\App\Http\Controllers\Admin\SettingController::class, 'index']);
     Route::post('/settings', [\App\Http\Controllers\Admin\SettingController::class, 'saveData']);
 
+    Route::get('/contents', [\App\Http\Controllers\Admin\ContentController::class, 'index']);
+    Route::post('/contents', [\App\Http\Controllers\Admin\ContentController::class, 'saveContent']);
+
+
 
 });

@@ -42,6 +42,10 @@
                     <div class="sb-nav-link-icon"><i class="fa fa-cog"></i></div>
                     Settings
                 </a>
+                <a class="nav-link" href="{{ url('admin/contents') }}">
+                    <div class="sb-nav-link-icon"><i class="fa-regular fa-file-lines"></i></div>
+                    Contents
+                </a>
             </div>
         </div>
         <div class="sb-sidenav-footer">

@@ -4,8 +4,11 @@
             <div class="col-md-6">
                 <h5>Neurospecial Blog</h5>
                 <div class="underline"></div>
+                @php
+                $content = App\Models\Content::find(1);
+                @endphp
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure cumque fuga ducimus quis ea? Repudiandae ad officia ullam, voluptates expedita consequuntur tenetur excepturi possimus pariatur dolores tempore unde voluptatum accusamus aperiam odio, rem laboriosam cupiditate laborum ut repellendus! Beatae, commodi.
+                    {{ $content->f_blog }}
                 </p>
             </div>
             <div class="col-md-3">

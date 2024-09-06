@@ -46,9 +46,11 @@
                 <div class="underline">
 
                 </div>
+                @php
+                $content = App\Models\Content::find(1);
+                @endphp
                 <p class="text-justify">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae error beatae eligendi ab aspernatur qui expedita ipsam. Deserunt suscipit voluptate quis. Vel voluptatibus nisi at, magni nesciunt aspernatur nobis provident!
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio reprehenderit porro, doloribus tempore consectetur eius rem ut voluptatem at ipsam pariatur consequuntur. Pariatur exercitationem doloremque adipisci perferendis, qui quos eligendi?
+                    {{ $content->S_blog }}
                 </p>
             </div>
         </div>
@@ -96,13 +98,48 @@
                 @endforeach
             </div>
             <div class="col-md-4">
-                <div class="border text-center p-3">
-                    <h3>Advertise here</h3>
+                <div class="text-center">
+                    <div class="card style="width: 18rem;" >
+                        <h2 class="p-2">Get in touch</h2>
+                        <img style="width: 200px;" src="{{ asset('uploads/category/'.$all_cate_item->image) }}" class="rounded mx-auto d-block" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content. text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#"><i class="fa-solid fa-envelopes-bulk fa-2xl" style="color: #40a2ec;"></i></a>
+                          <a href="#"><i class="fa-brands fa-youtube fa-2xl" style="color: #ff0000"></i></a>
+                          <a href="#"><i class="fa-brands fa-square-facebook fa-2xl"></i></a>
+                          <a href="#"><i class="fa-brands fa-square-instagram fa-2xl" style="color: #d51515;"></i></a>
+                          <a href="#"><i class="fa-brands fa-linkedin fa-2xl"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+<div class="py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h4>Our Mission</h4>
+                <div class="underline">
 
+                </div>
+                <p class="text-justify">
+                    {{ $content->s_mission }}
+                </p>
+            </div>
+            <div class="col-md-6">
+                <h4>Our Vision</h4>
+                <div class="underline">
+
+                </div>
+                <p class="text-justify">
+                    {{ $content->S_vision }}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
