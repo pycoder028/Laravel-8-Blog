@@ -38,6 +38,9 @@
 .text-justify{
     text-align: justify;
 }
+.text-deco{
+    text-decoration: none;
+}
 
 .owl-nav button.owl-next,
 .owl-nav button.owl-prev{
@@ -85,3 +88,7 @@
     border-radius: 0.25rem;
 }
 
+.front-logout{
+    background: rgb(131,58,180);
+    background: linear-gradient(60deg, rgba(131,58,180,1) 0%, rgba(204,24,24,1) 50%, rgba(252,176,69,1) 100%);
+}

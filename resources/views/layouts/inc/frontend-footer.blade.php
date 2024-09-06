@@ -1,32 +1,38 @@
 <div class="py-5 bg-dark text-white">
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-8">
                 <h5>Neurospecial Blog</h5>
                 <div class="underline"></div>
                 @php
                 $content = App\Models\Content::find(1);
                 @endphp
-                <p>
+                <p class="text-justify">
                     {{ $content->f_blog }}
                 </p>
             </div>
-            <div class="col-md-3">
-                <h5>Quick Links</h5>
-                <div class="underline"></div>
-                <div><a href="" class="text-white">Home</a></div>
-                <div><a href="" class="text-white">About Us</a></div>
-                <div><a href="" class="text-white">Contact Us</a></div>
-                <div><a href="" class="text-white">Needs Promotion ?</a></div>
-            </div>
-            <div class="col-md-3">
-                <h5>Follow Us On</h5>
-                <div class="underline"></div>
-                <div><a href="" class="text-white">Facebook</a></div>
-                <div><a href="" class="text-white">Instagram</a></div>
-                <div><a href="" class="text-white">Linkedin</a></div>
-                <div><a href="" class="text-white">Twitter</a></div>
-            </div>
+
+                <div class="col-md-2">
+                    <h5>Quick Links</h5>
+                    <div class="underline"></div>
+                    <div>
+                        <a href="{{ url('/') }}" class="text-white text-deco"><i class="fa-solid fa-house fa-xl"></i></a>
+                        <a href="{{ url('/') }}" class="text-white text-deco"><i class="fa-solid fa-address-card fa-xl"></i></a>
+                        <a href="{{ url('/') }}" class="text-white text-deco"><i class="fa-solid fa-handshake-angle fa-xl"></i></a>
+                        <a href="{{ url('/') }}" class="text-white text-deco"><i class="fa-solid fa-address-book fa-xl"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <h5>Follow Us On</h5>
+                    <div class="underline"></div>
+                    <div>
+                    <a href="" class="text-white text-deco"><i class="fa-brands fa-facebook-f fa-2xl"></i></a>
+                    <a href="" class="text-white text-deco"><i class="fa-brands fa-instagram fa-2xl"></i></a>
+                    <a href="" class="text-white text-deco"><i class="fa-brands fa-linkedin-in fa-2xl"></i></a>
+                    <a href="" class="text-white text-deco"><i class="fa-brands fa-x-twitter fa-2xl"></i></a>
+                    </div>
+                </div>
+
         </div>
     </div>
 </div>

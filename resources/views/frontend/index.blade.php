@@ -100,11 +100,15 @@
             <div class="col-md-4">
                 <div class="text-center">
                     <div class="card style="width: 18rem;" >
-                        <h2 class="p-2">Get in touch</h2>
-                        <img style="width: 200px;" src="{{ asset('uploads/category/'.$all_cate_item->image) }}" class="rounded mx-auto d-block" alt="...">
+                        <h2 class="p-2" style="color: #254e0bda">Get in touch</h2>
+                        <img style="width: 200px;" src="{{ asset('uploads/category/1724510241.png') }}" class="rounded mx-auto d-block" alt="...">
                         <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content. text to build on the card title and make up the bulk of the card's content.</p>
+                        @php
+                        $gettouch = App\Models\Gettouch::find(1);
+                        @endphp
+                          <h4 class="card-title">{{ $gettouch->name }}</h4>
+                          <p style="text-align: center;"><b style="color: #e0500d">{{ $gettouch->slug }}</b></p>
+                          <p class="card-text" style="text-align: justify">{{ $gettouch->description }}</p>
                           <a href="#"><i class="fa-solid fa-envelopes-bulk fa-2xl" style="color: #40a2ec;"></i></a>
                           <a href="#"><i class="fa-brands fa-youtube fa-2xl" style="color: #ff0000"></i></a>
                           <a href="#"><i class="fa-brands fa-square-facebook fa-2xl"></i></a>

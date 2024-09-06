@@ -21,7 +21,7 @@
 <div class="sticky-top">
     <nav class="navbar navbar-expand-lg navbar-dark bg-green">
         <div class="container">
-          <a href="" class="navbar-brand d-inline d-sm-inline d-md-none">Navbar</a>
+          <a href="" class="navbar-brand d-inline d-sm-inline d-md-none">Categories</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -51,7 +51,7 @@
               @endforeach
               @if(Auth::check())
               <li>
-                <a class="btn-danger nav-link" href="{{ route('logout') }}" 
+                <a class="nav-link front-logout" href="{{ route('logout') }}" 
                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                   @csrf

@@ -44,6 +44,7 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
     Route::get('/contents', [\App\Http\Controllers\Admin\ContentController::class, 'index']);
     Route::post('/contents', [\App\Http\Controllers\Admin\ContentController::class, 'saveContent']);
 
-
+    Route::get('/gettouch', [\App\Http\Controllers\Admin\GettouchController::class, 'index']);
+    Route::post('/gettouch', [\App\Http\Controllers\Admin\GettouchController::class, 'saveTouch']);
 
 });
